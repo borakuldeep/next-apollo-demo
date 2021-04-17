@@ -13,16 +13,16 @@ const Component = ({ person }) => {
             height={100}
           />
           <div className={styles.profileinfo}>
-            <h2>{person?.name}</h2>
+            <h3>{person?.name}</h3>
             <small>
               <b>Email: </b> {person?.email}
             </small>
-            <small>
+            <div>
               <b>Phone: </b> {person?.phone}
-            </small>
-            <small>
+            </div>
+            <div>
                <sub><b>Address: </b>{`${person?.address?.street}, ${person?.address?.city}, ${person?.address?.country}`}</sub>
-            </small>
+            </div>
           </div>
         </div>
       </div>

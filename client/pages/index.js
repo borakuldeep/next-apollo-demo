@@ -1,9 +1,9 @@
-import Head from 'next/head'
-import Link from 'next/link'
-import Name from '../components/Person'
-import styles from '../styles/Home.module.css'
+import Head from "next/head";
+import Link from "next/link";
+import Name from "../components/Person";
+import styles from "../styles/Home.module.css";
 
-const Page = ()=> {
+const Page = () => {
   return (
     <div className={styles.container}>
       <Head>
@@ -13,14 +13,16 @@ const Page = ()=> {
 
       <main className={styles.main}>
         Hello
-        <h1 className={styles.title}>
-          
-          Welcome to Next Apollo App
-        </h1>
+        <h1 className={styles.title}>Welcome to Next Apollo App</h1>
+        <br />
+        <Link href="/users">
+          <button>
+            <a>View user's list</a>
+          </button>
+        </Link>
       </main>
-
     </div>
-  )
-}
+  );
+};
 
 export default Page;

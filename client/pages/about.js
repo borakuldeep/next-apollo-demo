@@ -14,7 +14,7 @@ const About = () => (
     <br />
     <Link href="/">
       <button>
-        <a>Go Back</a>
+        <a>Go Home</a>
       </button>
     </Link>
   </div>

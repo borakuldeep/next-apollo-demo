@@ -1,20 +1,23 @@
 .userlist {
   display: flex;
   flex-wrap: wrap;
+  margin: auto;
 }
 
-.firstinfo,
-.badgescard {
+.firstinfo {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   align-items: center;
   margin-bottom: 3px;
+  background: lightgrey;
+  padding: 1rem 0 1rem 0;
 }
 
 .content {
   position: relative;
-  margin: 1rem;
+  margin: auto;
+  margin-bottom: 1rem;
 }
 
 .card {
@@ -27,59 +30,19 @@
   position: relative;
   overflow: hidden;
   transition: transform .2s;
+  box-sizing: border-box;
 }
 
 .card:hover {
-    transform: scale(1.1)
+    border-bottom: 10px solid #4979ff;
 }
 
-.card:after {
-  content: "";
-  display: block;
-  width: 190px;
-  height: 300px;
-  background: cadetblue;
-  position: absolute;
-  animation: rotatemagic 0.55s cubic-bezier(0.425, 1.04, 0.47, 1.105) 0.5s both;
+.actions {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
 }
 
-.fetchbtn {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 300px;
-    height: 300px;
-    padding: 5px;
-    border-radius: 3px;
-    background-color: white;
-    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
-    margin: 1rem;
-}
-
-.badgescard {
-  padding: 10px 20px;
-  border-radius: 3px;
-  background-color: #ececec;
-  width: 480px;
-  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
-  position: absolute;
-  z-index: -1;
-  left: 10px;
-  bottom: 10px;
-  animation: animainfos 0.5s cubic-bezier(0.425, 1.04, 0.47, 1.105) 0.75s
-    forwards;
-}
-.badgescard span {
-  font-size: 1.6em;
-  margin: 0px 6px;
-  opacity: 0.6;
-}
-
-.firstinfo {
-  flex-direction: row;
-  z-index: 2;
-  position: relative;
-}
 .firstinfo img {
   border-radius: 50%;
 }
@@ -88,19 +51,27 @@
   display: flex;
   flex-direction: column;
 }
-.firstinfo .profileinfo h1 {
-  font-size: 1.8em;
+
+
+.error{
+  color: #D8000C;
+  background-color: #FFBABA;
+  padding: 2rem;
 }
-.firstinfo .profileinfo h3 {
-  font-size: 1.2em;
-  color: #009688;
-  font-style: italic;
+
+.loader {
+  border: 16px solid #f3f3f3; /* Light grey */
+  border-top: 16px solid #3498db; /* Blue */
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
+  margin: auto;
 }
-.firstinfo .profileinfo p.bio {
-  padding: 10px 0px;
-  color: #5a5a5a;
-  line-height: 1.2;
-  font-style: initial;
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
 
 @keyframes animatop {

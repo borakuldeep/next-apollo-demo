@@ -1,0 +1,18 @@
+version: "3.9"
+services:
+  apollo-client:
+    image: apollonextclient
+    stdin_open: true
+    ports: 
+      - "3005:3000"
+    networks:
+      - next-apollo-app
+  apollo-server:
+    image: apolloserver
+    ports:
+      - "4000:4000"
+    networks:
+      - next-apollo-app
+networks:
+  next-apollo-app:
+    driver: bridge

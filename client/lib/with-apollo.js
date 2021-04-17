@@ -1,10 +1,23 @@
-import { withData } from 'next-apollo'
-import { HttpLink } from 'apollo-link-http'
+import { withApollo } from "next-apollo";
+import { gql, ApolloClient, InMemoryCache } from "@apollo/client";
 
-const apolloConfig = {
-  link: new HttpLink({
-    uri: 'https://faker-graphql.now.sh/graphql'
-  })
-}
+const apolloClient = new ApolloClient({
+  uri: "http://localhost:4000",
+  cache: new InMemoryCache(),
+});
 
-export default withData(apolloConfig)
+// apolloClient
+//   .query({
+//     query: gql`
+//       query ExampleQuery {
+//         users {
+//           name
+//           email
+//           phone
+//         }
+//       }
+//     `,
+//   })
+//   .then((result) => console.log(result));
+
+export default withApollo(apolloClient);

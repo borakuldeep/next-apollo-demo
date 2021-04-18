@@ -4,7 +4,7 @@ services:
     image: nextapolloclient
     stdin_open: true
     ports: 
-      - "5000:3000"
+      - "3000:3000"
     networks:
       - next-apollo-app
   apollo-server:

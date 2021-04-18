@@ -1,14 +1,14 @@
 version: "3.9"
 services:
   apollo-client:
-    image: apollonextclient
+    image: nextapolloclient
     stdin_open: true
     ports: 
-      - "3005:3000"
+      - "5000:3000"
     networks:
       - next-apollo-app
   apollo-server:
-    image: apolloserver
+    image: nextapolloserver
     ports:
       - "4000:4000"
     networks:

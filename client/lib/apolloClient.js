@@ -4,13 +4,13 @@ import { useMemo } from "react";
 
  let apolloClient;
 
- const LOCAL_APOLLO_SERVER = 'http://localhost:4000';
+ const APOLLO_SERVER = 'https://nextapolloserver.herokuapp.com/';
 
  function createApolloClient() {
    return new ApolloClient({
      ssrMode: false, // set to false for SSR
      link: new HttpLink({
-       uri: LOCAL_APOLLO_SERVER,
+       uri: APOLLO_SERVER,
      }),
      cache: new InMemoryCache({
         typePolicies: {

@@ -64,7 +64,7 @@ const usersData = [
     {
       request: {
         query: GET_USERS,
-        variables: { offset: 2, limit: 10 },
+        variables: { offset: 0, limit: 10 },
       },
       error: new Error("Something went wrong"),
     },
@@ -72,16 +72,26 @@ const usersData = [
 
 test("UserList Page rendered", async () => {
   render(
-    <MockedProvider mocks={mocks} addTypename={false}>
+    <MockedProvider mocks={[mocks[0]]} addTypename={false}>
       <UserList />
     </MockedProvider>
   );
 
-
-  expect(screen.getByText("Loading...")).toBeInTheDocument();
   await act(() =>new Promise(resolve => setTimeout(resolve, 1000)));
   expect(screen.getByText("User's List")).toBeInTheDocument();
-  expect(screen.getByRole("button", { name: "Go Back" })).toBeInTheDocument();
-  expect(screen.getByRole("button", { name: "Fetch 10 more" })).toBeInTheDocument();
-  expect(screen.getAllByRole("img", { name: "Picture of the author" })).toHaveLength(4);
+  expect(screen.getByRole("button", { name: "Go Home" })).toBeInTheDocument();
+  expect(screen.getByRole("button", { name: "Load more" })).toBeInTheDocument();
+  expect(screen.getAllByRole("img", { name: "Picture of the user" })).toHaveLength(4);
+});
+
+test("UserList Page Error", async () => {
+  render(
+    <MockedProvider mocks={[mocks[1]]} addTypename={false}>
+      <UserList />
+    </MockedProvider>
+  );
+
+  await act(() =>new Promise(resolve => setTimeout(resolve, 1000)));
+  expect(screen.getByText("Oops!! something went wrong. Make sure server is up and running at port 4000")).toBeInTheDocument();
+  expect(screen.getByRole("button", { name: "Go Home" })).toBeInTheDocument();
 });

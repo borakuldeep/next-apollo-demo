@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Link from "next/link";
-import Name from "../components/Person";
+
 import styles from "../styles/Home.module.css";
 
 const Page = () => {

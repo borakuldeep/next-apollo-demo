@@ -1,9 +1,8 @@
 import Link from "next/link";
 import { useQuery, gql } from "@apollo/client";
 
-// import { initializeApollo } from "../lib/apolloClient";
-import Person from "../components/Person";
-import styles from "../styles/Person.module.css";
+import UserCard from "../components/UserCard";
+import styles from "../styles/Users.module.css";
 
 export const GET_USERS = gql`
   query getUsers($offset: Int, $limit: Int) {
@@ -29,10 +28,11 @@ const Users = () => {
     },
   });
 
-  if (loading) return <div className={styles.loader}></div>;
+  if (loading) {
+      return <div className={styles.loader}></div>;
+  }
 
   if (error) {
-    console.log(error);
     return (
       <div>
         <p className={styles.error}>
@@ -54,7 +54,7 @@ const Users = () => {
       <br />
       <div className={styles.userlist}>
         {data?.users.map((u) => (
-          <Person key={u.email} person={u} />
+          <UserCard key={u.email} userInfo={u} />
         ))}
         
       </div>
@@ -84,9 +84,12 @@ const Users = () => {
 
 export default Users;
 
-/* Commented for building docker image as build will fail with no server running inside docker context */
+/* getStaticProps Commented for building docker image as build will fail with no server running inside docker context 
+    Now this page will be rendered static without data
+*/
 /* populate data during build time */
 // export const getStaticProps = async () => {
+//   const {initializeApollo} = await import('../lib/apolloClient');
 //   const apolloClient = initializeApollo();
 //   await apolloClient.query({
 //     query: GET_USERS,

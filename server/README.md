@@ -9,3 +9,5 @@ npm start
 yarn start
 ```
 
+> NOTE: for local run, change coreOptions origin to '*' in server.js
+

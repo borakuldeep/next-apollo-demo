@@ -1,7 +1,7 @@
 const Footer = () => {
     return (
       <footer>
-        Copyright 2021 Next-Apollo.  Dev - Kuldeep Bora
+        Copyright 2021 Next-Apollo. Dev - Kuldeep Bora
       </footer>
     );
   }

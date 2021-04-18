@@ -84,19 +84,17 @@ const Users = () => {
 
 export default Users;
 
-/* getStaticProps Commented for building docker image as build will fail with no server running inside docker context 
-    Now this page will be rendered static without data
-*/
+
 /* populate data during build time */
-// export const getStaticProps = async () => {
-//   const {initializeApollo} = await import('../lib/apolloClient');
-//   const apolloClient = initializeApollo();
-//   await apolloClient.query({
-//     query: GET_USERS,
-//     variables: {
-//       offset: 0,
-//       limit: 10,
-//     },
-//   });
-//   return { props: { initialApolloState: apolloClient.cache.extract() } };
-// };
+export const getStaticProps = async () => {
+  const {initializeApollo} = await import('../lib/apolloClient');
+  const apolloClient = initializeApollo();
+  await apolloClient.query({
+    query: GET_USERS,
+    variables: {
+      offset: 0,
+      limit: 10,
+    },
+  });
+  return { props: { initialApolloState: apolloClient.cache.extract() } };
+};

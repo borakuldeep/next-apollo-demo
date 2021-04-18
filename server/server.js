@@ -1,6 +1,9 @@
-const { ApolloServer } = require('apollo-server');
+const express = require('express');
 const typeDefs = require('./schema');
 const casual = require('casual');
+const cors = require('cors');
+const {  ApolloServer } = require('apollo-server-express');
+
 
 const getUser = () => ({
   name: casual.name,
@@ -33,10 +36,19 @@ const resolvers = {
 
 const server = new ApolloServer({ typeDefs, resolvers });
 
-server.listen().then(() => {
-  console.log(`
-    Server is running!
-    Listening on port 4000
-    Explore at https://studio.apollographql.com/dev
-  `);
-});
+const app = express();
+app.use(cors());
+
+server.applyMiddleware({
+  app,
+  path: '/',
+  cors: true,
+})
+
+
+const port = process.env.PORT || 4000
+app.listen(port, (err) => {
+  if (err) throw err
+  console.log(`Graphql Server started on: http://localhost:${port}`)
+})
+

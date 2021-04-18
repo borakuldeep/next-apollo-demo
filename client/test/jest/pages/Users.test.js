@@ -1,5 +1,5 @@
 import { render, screen, act } from "@testing-library/react";
-import { MockedProvider } from "@apollo/react-testing";
+import { MockedProvider } from "@apollo/client/testing";
 import UserList, {GET_USERS} from "../../../pages/users";
 
 const usersData = [

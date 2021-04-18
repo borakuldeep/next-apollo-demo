@@ -1,5 +1,5 @@
 {
-  "name": "faker-graphql",
+  "name": "apollo-next-server",
   "version": "1.0.0",
   "license": "MIT",
   "scripts": {
@@ -7,12 +7,7 @@
   },
   "dependencies": {
     "apollo-server": "^2.23.0",
-    "apollo-server-express": "^1.2.0",
-    "body-parser": "^1.19.0",
     "casual": "^1.6.2",
-    "cors": "^2.8.5",
-    "express": "^4.17.1",
-    "faker": "^5.5.3",
     "graphql": "^15.5.0"
   }
 }

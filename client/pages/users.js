@@ -66,6 +66,7 @@ const Users = () => {
               <a>Go Home</a>
             </button>
           </Link>
+          <span tile="Might take few seconds to load first time">
           <button
             onClick={() =>
               fetchMore({
@@ -77,6 +78,7 @@ const Users = () => {
           >
             Load more
           </button>
+          </span>
         </div>
     </div>
   );
@@ -85,8 +87,9 @@ const Users = () => {
 export default Users;
 
 /* getStaticProps Comment this function for building docker image when using local server since local server will not be available in context*/
-/* populate data during build time */
-export const getStaticProps = async () => {
+/* uncomment to populate data during build time */
+
+/*export const getStaticProps = async () => {
   const {initializeApollo} = await import('../lib/apolloClient');
   const apolloClient = initializeApollo();
   await apolloClient.query({
@@ -98,3 +101,4 @@ export const getStaticProps = async () => {
   });
   return { props: { initialApolloState: apolloClient.cache.extract() } };
 };
+*/

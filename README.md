@@ -1,7 +1,7 @@
 # next-apollo-demo
 Simple Next.js example with Apollo
 
-DEMO:  https://next-apollo-client-borakuldeep2.vercel.app/
+DEMO:  https://next-apollo-client-kappa.vercel.app/
 
 # client
 Created using NextJS and Apollo client. Requests and renders list of users at /users

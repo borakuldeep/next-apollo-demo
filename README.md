@@ -8,3 +8,5 @@ Created using NextJS and Apollo client. Requests and renders list of users at /u
 
 # server
 Created using Apollo server. Sends user list of 10 users at a time
+
+> Note: first time 'Load more' might take few seconds as the server might be sleeping (heroku free tier)

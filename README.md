@@ -1,5 +1,5 @@
 # next-apollo-demo
-Simple Next.js example with Apollo
+Simple EXample App created in Next.js and Apollo
 
 DEMO:  https://next-apollo-client-kappa.vercel.app/
 

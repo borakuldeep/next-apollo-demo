@@ -4,7 +4,7 @@ Simple EXample App created in Next.js and Apollo
 DEMO:  https://next-apollo-client-kappa.vercel.app/
 
 # client
-Created using NextJS and Apollo client. Requests and renders list of users at /users. Since app is statically generated at build time, first 10 users in users page will always be same. When requested via 'Load more' button at end of users page, the server will return new random users.
+Created using NextJS and Apollo client. Requests and renders list of users at /users. The json data is NOT statically rendered at build time and hence 'loading' icon will be shown on user/ page upon loading. To statically render 10 usres at build time, uncomment 'getStaticProps' function in user.js page.
 
 > Note: for local run, change server APOLLO_SERVER = 'http://localhost:4000/' in lib/apolloClient.js (because heroku server have CORS disabled for rest of source other than demo client url)
 

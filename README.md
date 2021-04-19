@@ -12,4 +12,5 @@ Created using NextJS and Apollo client. Requests and renders list of users at /u
 Created using Apollo server. Sends user list of 10 users at a time. Server URL: https://nextapolloserver.herokuapp.com/
 
 > Note: first time it might take few seconds to load users as the server might be sleeping (heroku free tier)
+
 > NOTE: for local run, change coreOptions origin to '*' in server.js to allow local client testing

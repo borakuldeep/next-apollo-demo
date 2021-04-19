@@ -29,15 +29,19 @@ const Users = () => {
   });
 
   if (loading) {
-      return <div className={styles.loader}></div>;
+      return (
+        <div>
+          <div className={styles.loader}></div>
+          <p> Might take few sceonds first time </p>
+        </div>
+      );
   }
 
   if (error) {
     return (
       <div>
         <p className={styles.error}>
-          Oops!! something went wrong. Make sure server is up and running at
-          port 4000
+          Oops!! something went wrong. Make sure server is up and running.
         </p>
         <Link href="/">
           <button>
@@ -66,7 +70,6 @@ const Users = () => {
               <a>Go Home</a>
             </button>
           </Link>
-          <span tile="Might take few seconds to load first time">
           <button
             onClick={() =>
               fetchMore({
@@ -78,7 +81,6 @@ const Users = () => {
           >
             Load more
           </button>
-          </span>
         </div>
     </div>
   );

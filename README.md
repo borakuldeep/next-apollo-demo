@@ -1,5 +1,5 @@
 # next-apollo-demo
-Simple EXample App created in Next.js and Apollo (using typescrit)
+Simple EXample App created in Next.js and Apollo (using typescript)
 
 DEMO:  https://next-apollo-client-kappa.vercel.app/
 

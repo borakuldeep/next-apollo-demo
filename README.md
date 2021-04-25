@@ -1,7 +1,7 @@
 # next-apollo-demo
 Simple EXample App created in Next.js and Apollo (using typescript)
 
-Unit Testing: Jest/eact testing library
+Unit Testing: Jest/React testing library
 
 E2E Integration testing: Cypress 
 

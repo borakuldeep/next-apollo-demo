@@ -9,13 +9,13 @@ const Navbar = () => {
         </Link>
       </div>
       <Link href="/">
-        <a>Home</a>
+        <a id="home_link">Home</a>
       </Link>
       <Link href="/about">
-        <a>About</a>
+        <a id="about_link">About</a>
       </Link>
       <Link href="/users/">
-        <a>
+        <a id="users_link">
           Users
         </a>
       </Link>

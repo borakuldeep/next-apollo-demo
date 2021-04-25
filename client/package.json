@@ -6,7 +6,8 @@
     "dev": "next dev",
     "test": "jest --passWithNoTests",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "cypress": "npx cypress open"
   },
   "dependencies": {
     "@apollo/client": "^3.3.15",
